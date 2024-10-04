@@ -33,5 +33,3 @@ RUN cd /usr/bin && curl -s http://getcomposer.org/installer | php && ln -s /usr/
 
 # コンテナ内で作業する際のディレクトリの指定
 WORKDIR /var/www/html
-
-RUN composer install
