@@ -1,3 +1,3 @@
-FROM nginx:stable-alpine
+FROM nginx:mainline
 
-COPY ./docker/nginx/default.conf /etc/nginx/conf.d/default.conf
+COPY ./default.conf /etc/nginx/conf.d/default.conf
