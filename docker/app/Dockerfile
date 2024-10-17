@@ -16,7 +16,7 @@ RUN chown -R www-data:www-data /var/www/html \
 
 COPY --from=composer:2.7.9 /usr/bin/composer /usr/local/bin/composer
 
-COPY composer.json ./
+COPY ../../src/composer.json ./
 RUN composer install
 
 CMD ["php-fpm"]
