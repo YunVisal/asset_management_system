@@ -2,7 +2,7 @@ FROM php:8.2-fpm
 
 EXPOSE 5001
 
-COPY php.ini /usr/local/etc/php/
+COPY ./docker/app/php.ini /usr/local/etc/php/
 RUN mkdir -p /var/log && touch /var/log/php_errors.log && chmod 666 /var/log/php_errors.log
 
 RUN docker-php-ext-install pdo_mysql mysqli
