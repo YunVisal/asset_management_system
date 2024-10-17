@@ -1,12 +1,16 @@
 services:
   nginx:
+    container_name: asset_ms_dev_nginx
     build: ./docker/nginx
     ports:
       - 8001:80
     volumes:
       - "asset_ms_dev:/var/www/html"
+    networks:
+      - asset_ms_dev_network
 
   app:
+    container_name: asset_ms_dev_app
     build:
       context: .
       dockerfile: ./docker/app/Dockerfile
@@ -15,11 +19,13 @@ services:
     volumes:
       - "asset_ms_dev:/var/www/html"
     networks:
-      - mysql_network
+      - mysql_mysql_network
+      - asset_ms_dev_network
 
 volumes:
   asset_ms_dev:
 
 networks:
-  mysql_network:
+  asset_ms_dev_network:
+  mysql_mysql_network:
     external: true
