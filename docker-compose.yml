@@ -19,7 +19,6 @@ services:
     volumes:
       - "asset_ms_dev:/var/www/html"
     networks:
-      - mysql_mysql_network
       - asset_ms_dev_network
 
 volumes:
@@ -27,5 +26,3 @@ volumes:
 
 networks:
   asset_ms_dev_network:
-  mysql_mysql_network:
-    external: true

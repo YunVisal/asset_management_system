@@ -2,9 +2,6 @@ FROM php:8.2-fpm
 
 EXPOSE 5001
 
-COPY ./docker/app/php.ini /usr/local/etc/php/conf.d/php.override.ini
-COPY ./docker/app/www.conf /usr/local/etc/php-fpm.d/www.conf
-
 RUN docker-php-ext-install pdo_mysql mysqli
 
 RUN apt-get update && apt-get install -y \
