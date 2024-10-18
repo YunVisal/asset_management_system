@@ -12,7 +12,7 @@ COPY ../../src/ /var/www/html
 WORKDIR /var/www/html
 
 RUN chown -R www-data:www-data /var/www/html \
-    && chmod -R 775 /var/www/html/storage
+    && chmod -R 777 /var/www/html/storage
 
 COPY --from=composer:2.7.9 /usr/bin/composer /usr/local/bin/composer
 
