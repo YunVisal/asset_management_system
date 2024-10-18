@@ -4,6 +4,15 @@ namespace App\Http\Requests\Asset;
 
 use Illuminate\Foundation\Http\FormRequest;
 
+/**
+ * @OA\Schema(
+ *     schema="UpdateAssetRequest",
+ *     required={"name", "status"},
+ *     @OA\Property(property="name", type="string", example="Iphone SE"),
+ *     @OA\Property(property="status", type="integer"),
+ * )
+ */
+
 class UpdateAssetRequest extends FormRequest
 {
     /**
