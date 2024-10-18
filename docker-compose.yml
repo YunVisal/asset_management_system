@@ -15,7 +15,7 @@ services:
       context: .
       dockerfile: ./docker/app/Dockerfile
     ports:
-      - 5001:5001
+      - 9001:9001
     volumes:
       - "./src:/var/www/html"
     networks:

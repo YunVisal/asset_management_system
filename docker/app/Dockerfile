@@ -1,6 +1,9 @@
 FROM php:8.2-fpm
 
-EXPOSE 5001
+RUN sed -i 's/9000/9001/g' /usr/local/etc/php-fpm.d/www.conf
+RUN sed -i 's/9000/9001/g' /usr/local/etc/php-fpm.d/zz-docker.conf
+
+EXPOSE 9001
 
 RUN docker-php-ext-install pdo_mysql mysqli
 
